@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SZPD",
+  metadataBase: new URL("https://www.szpdroeselare.be"),
+  title: "SZPD Roeselare",
   description: "Stoel Zitten Pils Drinken, studentenvereniging uit Roeselare",
-  robots: { index: false, follow: false },
 };
 
 const linkClass =
