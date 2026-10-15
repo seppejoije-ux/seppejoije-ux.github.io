@@ -26,20 +26,32 @@ export default function Praesidium() {
         </div>
       </div>
 
-      {/* Rij 2: 2 personen */}
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 lg:gap-16">
+
+
+
+
+            {/* Rij 1: 3 personen */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 lg:gap-16 mb-8 lg:mb-16">
         <div className="text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64">
-          <img src="/praesidium4.jpg" alt="Naam 4" className="w-full aspect-[4/5] object-cover rounded-lg" />
+          <img src="/praesidium1.jpg" alt="Naam 1" className="w-full aspect-[4/5] object-cover rounded-lg" />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
-          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B.</p>
+          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B. </p>
         </div>
 
         <div className="text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64">
-          <img src="/praesidium5.jpg" alt="Naam 5" className="w-full aspect-[4/5] object-cover rounded-lg" />
+          <img src="/praesidium2.jpg" alt="Naam 2" className="w-full aspect-[4/5] object-cover rounded-lg" />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
-          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D. </p>
+          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
+        </div>
+
+        <div className="text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64">
+          <img src="/praesidium3.jpg" alt="Naam 3" className="w-full aspect-[4/5] object-cover rounded-lg" />
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
+          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lars B.</p>
         </div>
       </div>
+
+
     </main>
   );
 }
