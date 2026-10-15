@@ -31,13 +31,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-white text-black overflow-x-hidden">
         <nav className="bg-white w-full py-3 lg:py-0 lg:h-35">
           <div className="h-full flex flex-col lg:flex-row justify-center items-center gap-3 lg:gap-12 px-4">
-            <Link href="/">
-              <img
-                src="/logo.jpg"
-                alt="Logo SZPD"
-                className="h-16 sm:h-20 lg:h-30 w-auto cursor-pointer"
-              />
-            </Link>
+            <Link
+               href="/">               
+                <img
+                  src="/logo.jpg"
+                  alt="Logo SZPD"
+                  className="h-16 sm:h-20 lg:h-30 w-auto cursor-pointer transition-transform duration-500 hover:rotate-12"
+                />
+              </Link>
 
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 sm:gap-x-8 lg:gap-12">
               <Link href="/" className={linkClass}>
