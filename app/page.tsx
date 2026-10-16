@@ -57,7 +57,7 @@ export default function Home() {
 
         <div className="flex-1 flex justify-center">
           <img
-            src="/logo.jpg"
+            src="/logoSite.jpg"
             alt="Logo SZPD"
             className="w-full max-w-xs sm:max-w-sm lg:max-w-none lg:w-auto lg:h-100"
           />
