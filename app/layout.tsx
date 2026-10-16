@@ -75,9 +75,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <Link href="/partners" className={linkClass}>
                 Onze Partners
               </Link>
-                            <Link href="/partners" className={linkClass}>
-                Onze Partners
-              </Link>
               <Link href="/contact" className={linkClass}>
                 Contact
               </Link>
@@ -113,9 +110,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 Foto's
               </Link>
               <Link href="/partners" className="hover:text-yellow-300 transition">
-                Onze Partners
-              </Link>
-                            <Link href="/partners" className="hover:text-yellow-300 transition">
                 Onze Partners
               </Link>
               <Link href="/contact" className="hover:text-yellow-300 transition">
