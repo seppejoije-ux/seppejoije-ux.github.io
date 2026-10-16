@@ -11,13 +11,17 @@ export default function ContactPage() {
         <li>
           E-mail:{" "}
           <a
-            href="mailto:info@szpdroeselare.be"
+            href="mailto:bestuur@szpdroeselare.be"
             className="text-blue-700 hover:underline"
           >
-            info@szpdroeselare.be
+            bestuur@szpdroeselare.be
           </a>
         </li>
+
+        {/* 
         <li>
+        
+    
           Instagram:{" "}
           <a
             href="https://www.instagram.com/JOUW_ACCOUNT"
@@ -28,6 +32,8 @@ export default function ContactPage() {
             @JOUW_ACCOUNT
           </a>
         </li>
+
+        */}
       </ul>
     </main>
   );
