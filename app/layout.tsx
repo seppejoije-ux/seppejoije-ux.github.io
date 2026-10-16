@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+
+import Script from "next/script";
+
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="nl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+
+<head>
+  <Script
+    src="https://cdn.cookie-script.com/s/8b7b1cb4868ac6e9520767b0800cd2a6.js"
+    strategy="beforeInteractive"
+  />
+</head>
+
+
       <body className="min-h-full flex flex-col bg-white text-black overflow-x-hidden">
         <nav className="bg-white w-full py-3 lg:py-0 lg:h-35">
           <div className="h-full flex flex-col lg:flex-row justify-center items-center gap-3 lg:gap-12 px-4">
