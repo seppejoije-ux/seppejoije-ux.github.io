@@ -29,7 +29,7 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="text-blue-700 hover:underline"
           >
-            instagram
+            szpd.roeselare
           </a>
         </li>
 
