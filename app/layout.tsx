@@ -4,6 +4,12 @@ import Link from "next/link";
 
 import Script from "next/script";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+
+
+
+
 
 import "./globals.css";
 
@@ -106,9 +112,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </div>
           </div>
         </footer>
-
+        <GoogleAnalytics gaId="G-6KPGMWPNS7" />
 
       </body>
     </html>
+
+
+
   );
 }
