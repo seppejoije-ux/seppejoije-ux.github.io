@@ -33,6 +33,24 @@ export default function ContactPage() {
           </a>
         </li>
 
+
+            
+        <li>
+        
+    
+          facebook:{" "}
+          <a
+            href="https://www.facebook.com/profile.php?id=61595088077732"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 hover:underline"
+          >
+            SZPD
+          </a>
+        </li>
+
+
+
     
       </ul>
     </main>
