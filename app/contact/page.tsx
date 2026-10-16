@@ -1,0 +1,34 @@
+export default function ContactPage() {
+  return (
+    <main className="flex-1 max-w-3xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold mb-4">Contact</h1>
+      <p className="mb-6">
+        Heb je een vraag over onze events of wil je met ons samenwerken?
+        Neem gerust contact met ons op.
+      </p>
+
+      <ul className="space-y-2 text-lg">
+        <li>
+          E-mail:{" "}
+          <a
+            href="mailto:info@szpdroeselare.be"
+            className="text-blue-700 hover:underline"
+          >
+            info@szpdroeselare.be
+          </a>
+        </li>
+        <li>
+          Instagram:{" "}
+          <a
+            href="https://www.instagram.com/JOUW_ACCOUNT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 hover:underline"
+          >
+            @JOUW_ACCOUNT
+          </a>
+        </li>
+      </ul>
+    </main>
+  );
+}
