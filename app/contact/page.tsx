@@ -18,13 +18,13 @@ export default function ContactPage() {
           </a>
         </li>
 
-        {/* 
+      
         <li>
         
     
           Instagram:{" "}
           <a
-            href="https://www.instagram.com/JOUW_ACCOUNT"
+            href="https://www.instagram.com/szpd.roeselare/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-700 hover:underline"
@@ -33,7 +33,7 @@ export default function ContactPage() {
           </a>
         </li>
 
-        */}
+    
       </ul>
     </main>
   );
