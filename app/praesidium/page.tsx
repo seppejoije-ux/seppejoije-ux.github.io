@@ -27,7 +27,7 @@ export default function Praesidium() {
 
         <div className="text-center w-full sm:max-w-56 lg:max-w-64">
           <img src="/Wobbe.jpg" alt="Naam 1" className="w-full aspect-[4/5] object-cover rounded-lg" />
-          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Secretaris</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B. </p>
         </div>
 
