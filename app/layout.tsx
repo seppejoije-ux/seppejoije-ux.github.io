@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const linkClass =
-  "text-lg sm:text-2xl lg:text-4xl hover:scale-110 transition-all duration-500";
+  "text-lg sm:text-2xl lg:text-4xl !text-black hover:scale-110 transition-all duration-500";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
