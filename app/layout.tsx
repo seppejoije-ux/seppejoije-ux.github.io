@@ -53,7 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link
                href="/">               
                 <img
-                  src="/logo.jpg"
+                  src="/logoSite.jpg"
                   alt="Logo SZPD"
                   className="h-16 sm:h-20 lg:h-30 w-auto cursor-pointer transition-transform duration-500 hover:rotate-12"
                 />
