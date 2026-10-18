@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <main className="flex-1 max-w-3xl mx-auto px-4 py-10">
+    <main className="flex-1 w-full bg-white text-black max-w-3xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold mb-4">Contact</h1>
       <p className="mb-6">
         Heb je een vraag over onze events of wil je met ons samenwerken?
