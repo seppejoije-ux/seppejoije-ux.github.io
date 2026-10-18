@@ -1,44 +1,49 @@
 export default function Praesidium() {
+  // Gsm: precies 2 per rij (50% min halve gap). Vanaf sm: vaste breedte.
+  const card =
+    "text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64";
+  const img = "w-full aspect-[4/5] object-cover rounded-lg";
+
   return (
-    <main className="min-h-screen bg-white text-black px-4 sm:px-10 lg:px-40 py-8 lg:py-12">
+    <main className="min-h-screen bg-white text-black px-4 sm:px-10 lg:px-20 py-8 lg:py-12">
       <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 lg:mb-12">Praesidium</h1>
 
-      {/* 6 personen: 3 rijen van 2 op gsm, 2 rijen van 3 op groot scherm */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 justify-items-center gap-4 sm:gap-8 lg:gap-16 mb-8 lg:mb-16">
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Yorun.jpg" alt="Naam 1" className="w-full aspect-[4/5] object-cover rounded-lg" />
+      {/* Vaste gap en vaste kaartbreedte: de kaarten wrappen, ze spreiden zich niet uit */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8 lg:mb-16">
+        <div className={card}>
+          <img src="/Yorun.jpg" alt="Yorun A." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Praeses</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">PR</p>
-          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Yorun A. </p>
+          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Yorun A.</p>
         </div>
 
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Brice.jpg" alt="Naam 2" className="w-full aspect-[4/5] object-cover rounded-lg" />
+        <div className={card}>
+          <img src="/Brice.jpg" alt="Brice M." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Vice-Praeses</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Brice M.</p>
         </div>
 
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Seppe.jpg" alt="Naam 3" className="w-full aspect-[4/5] object-cover rounded-lg" />
+        <div className={card}>
+          <img src="/Seppe.jpg" alt="Seppe J." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Quaestor</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Web-Master</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Seppe J.</p>
         </div>
 
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Wobbe.jpg" alt="Naam 1" className="w-full aspect-[4/5] object-cover rounded-lg" />
+        <div className={card}>
+          <img src="/Wobbe.jpg" alt="Wobbe B." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Secretaris</p>
-          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B. </p>
+          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B.</p>
         </div>
 
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Lexie.jpg" alt="Naam 2" className="w-full aspect-[4/5] object-cover rounded-lg" />
+        <div className={card}>
+          <img src="/Lexie.jpg" alt="Lexie D." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
         </div>
 
-        <div className="text-center w-full sm:max-w-56 lg:max-w-64">
-          <img src="/Lars.jpg" alt="Naam 3" className="w-full aspect-[4/5] object-cover rounded-lg" />
+        <div className={card}>
+          <img src="/Lars.jpg" alt="Lars B." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lars B.</p>
         </div>
