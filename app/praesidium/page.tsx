@@ -1,15 +1,14 @@
 export default function Praesidium() {
-  // Gsm: precies 2 per rij (50% min halve gap). Vanaf sm: vaste breedte.
-  const card =
-    "text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64";
+  // Gsm: precies 2 per rij. Vanaf sm: vaste breedte per kaart.
+  const card = "text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64";
   const img = "w-full aspect-[4/5] object-cover rounded-lg";
 
   return (
-    <main className="min-h-screen bg-white text-black px-4 sm:px-10 lg:px-20 py-8 lg:py-12">
+    <main className="min-h-screen bg-white text-black px-4 sm:px-10 py-8 lg:py-12">
       <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 lg:mb-12">Praesidium</h1>
 
-      {/* Vaste gap en vaste kaartbreedte: de kaarten wrappen, ze spreiden zich niet uit */}
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8 lg:mb-16">
+      {/* max-w = 3 kaarten + 2 gaps, zodat er nooit meer dan 3 naast elkaar staan */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mx-auto mb-8 lg:mb-16 max-w-[calc(3*14rem+2*2rem)] lg:max-w-[calc(3*16rem+2*2rem)]">
         <div className={card}>
           <img src="/Yorun.jpg" alt="Yorun A." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Praeses</p>
