@@ -1,7 +1,8 @@
 export default function Fotos() {
   return (
   <main className="w-full flex-1 min-h-screen bg-white text-black max-w-7xl mx-auto px-4 sm:px-10 py-8 lg:py-12">
-      <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 lg:mb-12">under construction</h1>
+      <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 lg:mb-12">Foto&apos;s</h1>
+      <p className="text-4xl sm:text-5xl font-bold text-center mb-8 lg:mb-12">under construction</p>
 
 
 
