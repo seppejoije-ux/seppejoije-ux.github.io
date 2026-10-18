@@ -32,7 +32,7 @@ export default function Events() {
           <div className="min-w-0">
             <h3 className="text-xl sm:text-3xl font-bold break-words">Vergadering</h3>
             <p className="text-base sm:text-lg text-gray-600">20:00 · De Sloeber</p>
-            <p className="text-base sm:text-xl mt-1 sm:mt-2">aankomene activiteiten regelen</p>
+            <p className="text-base sm:text-xl mt-1 sm:mt-2">aankomende activiteiten regelen</p>
           </div>
         </div>
 
