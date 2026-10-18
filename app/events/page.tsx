@@ -25,8 +25,8 @@ export default function Events() {
         {/* Afgelopen 1 (meest recent) */}
         <div className="flex items-center gap-4 sm:gap-8 border-2 border-gray-400 opacity-70 rounded-lg p-4 sm:p-6">
           <div className="shrink-0 bg-gray-500 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-            <p className="text-2xl sm:text-4xl font-bold">20</p>
-            <p className="text-base sm:text-xl uppercase">Sep</p>
+            <p className="text-2xl sm:text-4xl font-bold">15</p>
+            <p className="text-base sm:text-xl uppercase">Okt</p>
           </div>
 
           <div className="min-w-0">
