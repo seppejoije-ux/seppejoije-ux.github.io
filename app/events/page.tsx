@@ -7,42 +7,14 @@ export default function Events() {
         {/* Aankomend 1 */}
         <div className="flex items-center gap-4 sm:gap-8 border-2 border-blue-700 rounded-lg p-4 sm:p-6">
           <div className="shrink-0 bg-blue-700 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-            <p className="text-2xl sm:text-4xl font-bold">15</p>
-            <p className="text-base sm:text-xl uppercase">Okt</p>
+            <p className="text-2xl sm:text-4xl font-bold">...</p>
+            <p className="text-base sm:text-xl uppercase">...</p>
           </div>
 
           <div className="min-w-0">
-            <h3 className="text-xl sm:text-3xl font-bold break-words">Naam event 1</h3>
-            <p className="text-base sm:text-lg text-gray-600">20:00 · Locatie</p>
-            <p className="text-base sm:text-xl mt-1 sm:mt-2">Korte omschrijving van het event.</p>
-          </div>
-        </div>
-
-        {/* Aankomend 2 */}
-        <div className="flex items-center gap-4 sm:gap-8 border-2 border-blue-700 rounded-lg p-4 sm:p-6">
-          <div className="shrink-0 bg-blue-700 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-            <p className="text-2xl sm:text-4xl font-bold">29</p>
-            <p className="text-base sm:text-xl uppercase">Okt</p>
-          </div>
-
-          <div className="min-w-0">
-            <h3 className="text-xl sm:text-3xl font-bold break-words">Naam event 2</h3>
-            <p className="text-base sm:text-lg text-gray-600">21:00 · Locatie</p>
-            <p className="text-base sm:text-xl mt-1 sm:mt-2">Korte omschrijving van het event.</p>
-          </div>
-        </div>
-
-        {/* Aankomend 3 */}
-        <div className="flex items-center gap-4 sm:gap-8 border-2 border-blue-700 rounded-lg p-4 sm:p-6">
-          <div className="shrink-0 bg-blue-700 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-            <p className="text-2xl sm:text-4xl font-bold">12</p>
-            <p className="text-base sm:text-xl uppercase">Nov</p>
-          </div>
-
-          <div className="min-w-0">
-            <h3 className="text-xl sm:text-3xl font-bold break-words">Naam event 3</h3>
-            <p className="text-base sm:text-lg text-gray-600">20:30 · Locatie</p>
-            <p className="text-base sm:text-xl mt-1 sm:mt-2">Korte omschrijving van het event.</p>
+            <h3 className="text-xl sm:text-3xl font-bold break-words">To Be Announced</h3>
+            <p className="text-base sm:text-lg text-gray-600">... · ...</p>
+            <p className="text-base sm:text-xl mt-1 sm:mt-2">kennismaking</p>
           </div>
         </div>
       </div>
@@ -58,13 +30,16 @@ export default function Events() {
           </div>
 
           <div className="min-w-0">
-            <h3 className="text-xl sm:text-3xl font-bold break-words">Afgelopen event A</h3>
-            <p className="text-base sm:text-lg text-gray-600">19:00 · Locatie</p>
-            <p className="text-base sm:text-xl mt-1 sm:mt-2">Korte omschrijving van het event.</p>
+            <h3 className="text-xl sm:text-3xl font-bold break-words">Vergadering</h3>
+            <p className="text-base sm:text-lg text-gray-600">20:00 · De Sloeber</p>
+            <p className="text-base sm:text-xl mt-1 sm:mt-2">aankomene activiteiten regelen</p>
           </div>
         </div>
 
+
+    
         {/* Afgelopen 2 (oudste, onderaan) */}
+            {/*
         <div className="flex items-center gap-4 sm:gap-8 border-2 border-gray-400 opacity-70 rounded-lg p-4 sm:p-6">
           <div className="shrink-0 bg-gray-500 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
             <p className="text-2xl sm:text-4xl font-bold">5</p>
@@ -77,6 +52,9 @@ export default function Events() {
             <p className="text-base sm:text-xl mt-1 sm:mt-2">Korte omschrijving van het event.</p>
           </div>
         </div>
+              */}
+
+    
       </div>
     </main>
   );
