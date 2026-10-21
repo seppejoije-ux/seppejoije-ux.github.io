@@ -66,7 +66,7 @@ export default function FotoSlider() {
             <img
               src={src}
               alt={`Foto ${(i % FOTOS.length) + 1}`}
-              className="w-full h-48 sm:h-64 object-cover rounded-lg"
+              className="w-full h-48 sm:h-96 object-cover rounded-lg"
             />
           </div>
         ))}
