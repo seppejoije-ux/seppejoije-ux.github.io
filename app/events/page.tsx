@@ -10,16 +10,59 @@ export default function Events() {
       type: "szpd",
     },
 
-    {
+        {
       date: "2026-10-22",
       day: "22",
       month: "OKT",
       title: "LAN PARTY",
       location: "18:00 · Stuvo Brugge",
-      description:
-        "Georganiseerd door IEEE Brugge. Verschillende SZPD-leden zullen aanwezig zijn.",
+      description: (
+        <>
+          Georganiseerd door IEEE Brugge.
+          <br />
+          Verschillende SZPD-leden zullen aanwezig zijn.
+        </>
+),
+
       type: "external",
     },
+
+
+    {
+      date: "2026-11-07",
+      day: "7",
+      month: "NOV",
+      title: "Sint Maartensstoet",
+      location: "17:00 · Ardooie",
+            description: (
+        <>
+          stoet met praalwagens en vuurwerk
+          <br />
+          SZPD is present
+        </>
+),
+      type: "external",
+    },
+
+
+    {
+      date: "2026-11-20",
+      day: "20",
+      month: "NOV",
+      title: "QUIZ DVK EGEM",
+      location: "19:00 · De Magneet Pittem",
+            description: (
+        <>
+          Georganiseerd door Jeugd Dames VK Egem.
+          <br />
+          Eén team vertegenwoordigt SZPD
+        </>
+),
+      type: "external",
+    },
+
+
+    
 
     {
       date: "2026-10-15",
@@ -140,6 +183,20 @@ export default function Events() {
             </div>
 
             <div className="min-w-0">
+
+              <div
+                className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
+                  event.type === "external"
+                    ? "bg-yellow-400 text-black"
+                    : "bg-blue-700 text-white"
+                }`}
+              >
+                {event.type === "external"
+                  ? "Je vond ons hier"
+                  : "SZPD evenement"}
+              </div>
+
+
               <h3 className="text-xl sm:text-3xl font-bold">
                 {event.title}
               </h3>
