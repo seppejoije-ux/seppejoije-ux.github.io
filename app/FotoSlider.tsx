@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const FOTOS = [
-  "/foto1.jpg",
+  "/bowlinnederland.jpg",
   "/foto2.jpg",
   "/foto3.jpg",
   "/foto4.jpg",
