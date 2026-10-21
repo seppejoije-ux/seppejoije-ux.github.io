@@ -7,6 +7,7 @@ const FOTOS = [
   "/biljartnederland1.jpg",
   "/pokernederland.jpg",
   "/biljartnederland.jpg",
+  "/foto5,"
   
   // extra foto's? voeg hier gewoon een regel toe
 ];
