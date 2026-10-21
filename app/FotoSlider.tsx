@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 const FOTOS = [
   "/bowlingnederland.jpg",
-  "/foto2.jpg",
-  "/foto3.jpg",
-  "/foto4.jpg",
-  "/foto5.jpg",
-  "/foto6.jpg",
+  "/biljartnederland1.jpg",
+  "/pokernederland.jpg",
+  "/biljartnederland.jpg",
+  
   // extra foto's? voeg hier gewoon een regel toe
 ];
 
@@ -66,8 +65,7 @@ export default function FotoSlider() {
             <img
               src={src}
               alt={`Foto ${(i % FOTOS.length) + 1}`}
-              className="w-full h-48 sm:h-96 object-cover rounded-lg"
-            />
+                className="w-full h-80 object-cover rounded-lg"/>
           </div>
         ))}
       </div>
