@@ -41,11 +41,7 @@ export default function Praesidium() {
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
         </div>
 
-        <div className={card}>
-          <img src="/Lars.jpg" alt="Lars B." className={img} />
-          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
-          <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lars B.</p>
-        </div>
+        
       </div>
     </main>
   );
