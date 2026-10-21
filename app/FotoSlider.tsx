@@ -30,7 +30,7 @@ export default function FotoSlider() {
     const timer = setInterval(() => {
       setAnimeren(true);
       setIndex((i) => i + 1);
-    }, 5000);
+    }, 3500);
     return () => clearInterval(timer);
   }, []);
 
