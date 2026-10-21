@@ -1,3 +1,5 @@
+import FotoSlider from "./FotoSlider";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black">
@@ -40,7 +42,7 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
             Wie zijn wij
           </h2>
-          <p className="text-base sm:text-xl mb-4">
+          <p className="text-base sm:text-2xl mb-4">
             Beste Stoelzitters en Pilsdrinkers.
             <br />
             Wij zijn een startende studentenvereniging uit Roeselare. Ons doel
@@ -63,6 +65,13 @@ export default function Home() {
           />
         </div>
       </section>
+
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-10 py-8 lg:py-12">
+        <FotoSlider />
+      </section>
+
+
     </main>
   );
 }

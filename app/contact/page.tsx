@@ -1,13 +1,16 @@
 export default function ContactPage() {
   return (
     <main className="flex-1 w-full bg-white text-black max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-4">Contact</h1>
-      <p className="mb-6">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+        Contact
+      </h1>
+
+      <p className="text-base sm:text-2xl mb-6">
         Heb je een vraag over onze events of wil je met ons samenwerken?
         Neem gerust contact met ons op.
       </p>
 
-      <ul className="space-y-2 text-lg">
+      <ul className="space-y-6 text-base sm:text-2xl">
         <li>
           E-mail:{" "}
           <a
@@ -18,10 +21,7 @@ export default function ContactPage() {
           </a>
         </li>
 
-      
         <li>
-        
-    
           Instagram:{" "}
           <a
             href="https://www.instagram.com/szpd.roeselare/"
@@ -33,12 +33,8 @@ export default function ContactPage() {
           </a>
         </li>
 
-
-            
         <li>
-        
-    
-          facebook:{" "}
+          Facebook:{" "}
           <a
             href="https://www.facebook.com/profile.php?id=61595088077732"
             target="_blank"
@@ -48,10 +44,6 @@ export default function ContactPage() {
             SZPD
           </a>
         </li>
-
-
-
-    
       </ul>
     </main>
   );
