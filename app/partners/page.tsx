@@ -52,7 +52,7 @@ export default function Partners() {
     <main className="min-h-screen bg-white text-black px-4 sm:px-10 lg:px-40 py-8 lg:py-12">
       <h1 className="text-4xl text-center sm:text-5xl font-bold">Onze partners</h1>
       <p className="mt-4 mx-auto max-w-2xl text-center text-2xl text-neutral-600">
-        Dankzij deze partners kunnen we doen wat we doen.
+        Dankzij onze partners kunnen we doen wat we doen.
       </p>
       <p className="mt-4 mx-auto max-w-2xl text-center text-2xl text-neutral-600">
         Bedankt voor jullie steun!
