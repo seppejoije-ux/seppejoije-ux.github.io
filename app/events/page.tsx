@@ -92,22 +92,24 @@ export default function Events() {
         Aankomende evenementen
       </h1>
 
-      {/* Legende */}
-      <div className="flex justify-center gap-6 mb-10 flex-wrap">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-700 rounded"></div>
-          <span className="text-xl sm:text-2xl font-medium">
-            SZPD evenement
-          </span>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-yellow-400 rounded"></div>
-          <span className="text-xl sm:text-2xl font-medium">
-            Je vindt ons hier
-          </span>
+      
+        {/* Legende */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-10">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded shrink-0"></div>
+            <span className="text-lg sm:text-2xl font-medium">
+              SZPD evenement
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded shrink-0"></div>
+            <span className="text-lg sm:text-2xl font-medium">
+              Je vindt ons hier
+            </span>
+          </div>
         </div>
-      </div>
 
       {/* Aankomende evenementen */}
       <div className="flex flex-col gap-6 max-w-4xl mx-auto">
