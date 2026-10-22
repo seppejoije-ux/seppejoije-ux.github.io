@@ -32,12 +32,14 @@ export default function Praesidium() {
         <div className={card}>
           <img src="/Wobbe.jpg" alt="Wobbe B." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Secretaris</p>
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B.</p>
         </div>
 
         <div className={card}>
           <img src="/Lexie.jpg" alt="Lexie D." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
         </div>
 
