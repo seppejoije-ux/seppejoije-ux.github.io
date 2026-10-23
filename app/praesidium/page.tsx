@@ -19,6 +19,7 @@ export default function Praesidium() {
         <div className={card}>
           <img src="/Brice.jpg" alt="Brice M." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Vice-Praeses</p>
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">DJ BRISTI</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Brice M.</p>
         </div>
 
