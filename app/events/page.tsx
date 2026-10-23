@@ -75,7 +75,7 @@ export default function Events() {
 
   // De datum wordt pas in de browser bepaald, zodat de lijst altijd klopt,
   // ook op een statische host zoals GitHub Pages.
-  const [today, setToday] = useState(null);
+  const [today, setToday] = useState<Date | null>(null);
 
   useEffect(() => {
     const t = new Date();
@@ -84,7 +84,7 @@ export default function Events() {
   }, []);
 
   // Parse "YYYY-MM-DD" als lokale datum (voorkomt tijdzoneproblemen)
-  const parseDate = (s) => {
+  const parseDate = (s: string): Date => {
     const [y, m, d] = s.split("-").map(Number);
     return new Date(y, m - 1, d);
   };
@@ -92,13 +92,17 @@ export default function Events() {
   const upcomingEvents = today
     ? events
         .filter((e) => parseDate(e.date) >= today)
-        .sort((a, b) => parseDate(a.date) - parseDate(b.date))
+        .sort(
+          (a, b) => parseDate(a.date).getTime() - parseDate(b.date).getTime()
+        )
     : [];
 
   const pastEvents = today
     ? events
         .filter((e) => parseDate(e.date) < today)
-        .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+        .sort(
+          (a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime()
+        )
     : [];
 
   return (
