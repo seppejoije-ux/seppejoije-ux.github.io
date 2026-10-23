@@ -43,16 +43,18 @@ export default function Home() {
             Wie zijn wij
           </h2>
           <p className="text-base sm:text-2xl mb-4">
-            Beste Stoelzitters en Pilsdrinkers.
+            Beste Stoelzitters en Pilsdrinkers
             <br />
-            Wij zijn een startende studentenvereniging uit Roeselare. Ons doel
-            is simpel: studenten samenbrengen en zorgen voor onvergetelijke
-            momenten naast de lessen. Doorheen het jaar organiseren we leuke
-            activiteiten, gezellige avonden en evenementen waar sfeer,
-            vriendschap en plezier centraal staan. Of je nu komt voor de
-            gezelligheid, een frisse pint of nieuwe vrienden, bij ons is
-            iedereen welkom. Samen maken we van het studentenleven iets om nooit
-            te vergeten.
+            Wij zijn een startende studentenvereniging uit Roeselare, 
+            opgericht door studenten van KU Leuven Brugge, KU Leuven 
+            Kortrijk en VIVES Brugge. Ons doel is simpel: studenten 
+            samenbrengen en zorgen voor onvergetelijke momenten naast 
+            de lessen. Doorheen het jaar organiseren we leuke 
+            activiteiten, gezellige avonden en evenementen waar sfeer, 
+            vriendschap en plezier centraal staan. Of je nu komt voor 
+            de gezelligheid, een frisse pint of nieuwe vrienden, bij 
+            ons is iedereen welkom. Samen maken we van het 
+            studentenleven iets om nooit te vergeten.
           </p>
           <p className="text-base sm:text-xl">SZPD it's a lifestyle</p>
         </div>
