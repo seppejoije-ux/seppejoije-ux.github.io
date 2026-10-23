@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Events() {
   const events = [
     {
@@ -10,7 +14,7 @@ export default function Events() {
       type: "szpd",
     },
 
-        {
+    {
       date: "2026-10-22",
       day: "22",
       month: "OKT",
@@ -22,11 +26,9 @@ export default function Events() {
           <br />
           Verschillende SZPD-leden zullen aanwezig zijn.
         </>
-),
-
+      ),
       type: "external",
     },
-
 
     {
       date: "2026-11-07",
@@ -34,16 +36,15 @@ export default function Events() {
       month: "NOV",
       title: "Sint Maartensstoet",
       location: "17:00 · Ardooie",
-            description: (
+      description: (
         <>
           stoet met praalwagens en vuurwerk
           <br />
           SZPD is present
         </>
-),
+      ),
       type: "external",
     },
-
 
     {
       date: "2026-11-20",
@@ -51,18 +52,15 @@ export default function Events() {
       month: "NOV",
       title: "QUIZ DVK EGEM",
       location: "19:00 · De Magneet Pittem",
-            description: (
+      description: (
         <>
           Georganiseerd door Jeugd Dames VK Egem.
           <br />
           Eén team vertegenwoordigt SZPD
         </>
-),
+      ),
       type: "external",
     },
-
-
-    
 
     {
       date: "2026-10-15",
@@ -75,16 +73,33 @@ export default function Events() {
     },
   ];
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  // De datum wordt pas in de browser bepaald, zodat de lijst altijd klopt,
+  // ook op een statische host zoals GitHub Pages.
+  const [today, setToday] = useState(null);
 
-  const upcomingEvents = events.filter(
-    (event) => new Date(event.date) >= today
-  );
+  useEffect(() => {
+    const t = new Date();
+    t.setHours(0, 0, 0, 0);
+    setToday(t);
+  }, []);
 
-  const pastEvents = events.filter(
-    (event) => new Date(event.date) < today
-  );
+  // Parse "YYYY-MM-DD" als lokale datum (voorkomt tijdzoneproblemen)
+  const parseDate = (s) => {
+    const [y, m, d] = s.split("-").map(Number);
+    return new Date(y, m - 1, d);
+  };
+
+  const upcomingEvents = today
+    ? events
+        .filter((e) => parseDate(e.date) >= today)
+        .sort((a, b) => parseDate(a.date) - parseDate(b.date))
+    : [];
+
+  const pastEvents = today
+    ? events
+        .filter((e) => parseDate(e.date) < today)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+    : [];
 
   return (
     <main className="min-h-screen bg-white text-black px-4 sm:px-10 lg:px-40 py-8 lg:py-12">
@@ -92,24 +107,22 @@ export default function Events() {
         Aankomende evenementen
       </h1>
 
-
-      
-        {/* Legende */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-10">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded shrink-0"></div>
-            <span className="text-lg sm:text-2xl font-medium">
-              SZPD evenement
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded shrink-0"></div>
-            <span className="text-lg sm:text-2xl font-medium">
-              Je vindt ons hier
-            </span>
-          </div>
+      {/* Legende */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-10">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-700 rounded shrink-0"></div>
+          <span className="text-lg sm:text-2xl font-medium">
+            SZPD evenement
+          </span>
         </div>
+
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded shrink-0"></div>
+          <span className="text-lg sm:text-2xl font-medium">
+            Je vindt ons hier
+          </span>
+        </div>
+      </div>
 
       {/* Aankomende evenementen */}
       <div className="flex flex-col gap-6 max-w-4xl mx-auto">
@@ -130,9 +143,7 @@ export default function Events() {
               }`}
             >
               <p className="text-2xl sm:text-4xl font-bold">{event.day}</p>
-              <p className="text-base sm:text-xl uppercase">
-                {event.month}
-              </p>
+              <p className="text-base sm:text-xl uppercase">{event.month}</p>
             </div>
 
             <div className="min-w-0 flex-1">
@@ -148,17 +159,13 @@ export default function Events() {
                   : "SZPD evenement"}
               </div>
 
-              <h3 className="text-xl sm:text-3xl font-bold">
-                {event.title}
-              </h3>
+              <h3 className="text-xl sm:text-3xl font-bold">{event.title}</h3>
 
               <p className="text-base sm:text-lg text-gray-600">
                 {event.location}
               </p>
 
-              <p className="text-base sm:text-xl mt-2">
-                {event.description}
-              </p>
+              <p className="text-base sm:text-xl mt-2">{event.description}</p>
             </div>
           </div>
         ))}
@@ -176,16 +183,11 @@ export default function Events() {
             className="flex items-center gap-4 sm:gap-8 border-2 border-gray-400 opacity-70 rounded-lg p-4 sm:p-6"
           >
             <div className="shrink-0 bg-gray-500 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-              <p className="text-2xl sm:text-4xl font-bold">
-                {event.day}
-              </p>
-              <p className="text-base sm:text-xl uppercase">
-                {event.month}
-              </p>
+              <p className="text-2xl sm:text-4xl font-bold">{event.day}</p>
+              <p className="text-base sm:text-xl uppercase">{event.month}</p>
             </div>
 
             <div className="min-w-0">
-
               <div
                 className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
                   event.type === "external"
@@ -194,22 +196,17 @@ export default function Events() {
                 }`}
               >
                 {event.type === "external"
-                  ? "Je vond ons hier"
+                  ? "Je vindt ons hier"
                   : "SZPD evenement"}
               </div>
 
-
-              <h3 className="text-xl sm:text-3xl font-bold">
-                {event.title}
-              </h3>
+              <h3 className="text-xl sm:text-3xl font-bold">{event.title}</h3>
 
               <p className="text-base sm:text-lg text-gray-600">
                 {event.location}
               </p>
 
-              <p className="text-base sm:text-xl mt-2">
-                {event.description}
-              </p>
+              <p className="text-base sm:text-xl mt-2">{event.description}</p>
             </div>
           </div>
         ))}
