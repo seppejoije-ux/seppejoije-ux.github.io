@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const FOTOS = [
-  "/bowlingnederland.jpg",
-  "/biljartnederland1.jpg",
-  "/pokernederland.jpg",
-  "/biljartnederland.jpg",
+  "/FotosHome/bowlingnederland.jpg",
+  "/FotosHome/biljartnederland1.jpg",
+  "/FotosHome/pokernederland.jpg",
+  "/FotosHome/biljartnederland.jpg",
 
   
   // extra foto's? voeg hier gewoon een regel toe

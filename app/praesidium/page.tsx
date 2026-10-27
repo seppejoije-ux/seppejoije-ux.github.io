@@ -10,35 +10,35 @@ export default function Praesidium() {
       {/* max-w = 3 kaarten + 2 gaps, zodat er nooit meer dan 3 naast elkaar staan */}
       <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mx-auto mb-8 lg:mb-16 max-w-[calc(3*14rem+2*2rem)] lg:max-w-[calc(3*16rem+2*2rem)]">
         <div className={card}>
-          <img src="/Yorun.jpg" alt="Yorun A." className={img} />
+          <img src="/FotosPraesidium/Yorun.jpg" alt="Yorun A." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Praeses</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">PR</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Yorun A.</p>
         </div>
 
         <div className={card}>
-          <img src="/Brice.jpg" alt="Brice M." className={img} />
+          <img src="/FotosPraesidium/Brice.jpg" alt="Brice M." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Vice-Praeses</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">DJ BRISTI</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Brice M.</p>
         </div>
 
         <div className={card}>
-          <img src="/Seppe.jpg" alt="Seppe J." className={img} />
+          <img src="/FotosPraesidium/Seppe.jpg" alt="Seppe J." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Quaestor</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Web-Master</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Seppe J.</p>
         </div>
 
         <div className={card}>
-          <img src="/Wobbe.jpg" alt="Wobbe B." className={img} />
+          <img src="/FotosPraesidium/Wobbe.jpg" alt="Wobbe B." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Secretaris</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B.</p>
         </div>
 
         <div className={card}>
-          <img src="/Lexie.jpg" alt="Lexie D." className={img} />
+          <img src="/FotosPraesidium/Lexie.jpg" alt="Lexie D." className={img} />
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>

@@ -6,8 +6,8 @@ type Partner = {
 
 // Voeg hier gewoon partners toe of verwijder ze.
 const partners: Partner[] = [
-  { naam: "Partner één", logo: "/Decoral.jpg" }, // logo zonder website
-  { naam: "Partner twee", logo: "/ClassicDesign.jpg", website: "https://classic-design.be/" }, // logo met website
+  { naam: "Partner één", logo: "/LogosSponsors/Decoral.jpg" }, // logo zonder website
+  { naam: "Partner twee", logo: "/LogosSponsors/ClassicDesign.jpg", website: "https://classic-design.be/" }, // logo met website
   // geen logo -> naam als tekst   { naam: "Partner drie", website: "https://www.voorbeeld.com" }, 
   // { naam: "Partner vier" },
 ];

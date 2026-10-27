@@ -18,12 +18,12 @@ export default function Home() {
         {/* Stoelen: op gsm naast elkaar onder de titel */}
         <div className="order-2 w-full flex justify-center items-center gap-2 sm:gap-6 lg:contents">
           <img
-            src="/stoel_links.jpg"
+            src="/FotosHome/stoel_links.jpg"
             alt="Stoel links"
             className="lg:order-1 h-32 sm:h-48 lg:h-70 w-auto min-w-0 max-w-[45%] lg:max-w-none object-contain"
           />
           <img
-            src="/stoel_rechts.jpg"
+            src="/FotosHome/stoel_rechts.jpg"
             alt="Stoel rechts"
             className="lg:order-3 h-32 sm:h-48 lg:h-70 w-auto min-w-0 max-w-[45%] lg:max-w-none object-contain"
           />
@@ -61,7 +61,7 @@ export default function Home() {
 
         <div className="flex-1 flex justify-center">
           <img
-            src="/logoSite.jpg"
+            src="/FotosHome/logoSite.jpg"
             alt="Logo SZPD"
             className="w-full max-w-xs sm:max-w-sm lg:max-w-none lg:w-auto lg:h-100"
           />
