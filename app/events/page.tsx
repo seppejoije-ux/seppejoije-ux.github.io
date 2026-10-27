@@ -4,15 +4,16 @@ import { useEffect, useState } from "react";
 
 export default function Events() {
   const events = [
-    {
-      date: "2026-11-01",
-      day: "...",
-      month: "...",
-      title: "To Be Announced",
-      location: "... · ...",
-      description: "Kennismaking",
+        {
+      date: "2026-10-29",
+      day: "29",
+      month: "OKT",
+      title: "Vergadering",
+      location: "20:00 · De Sloeber",
+      description: "bestuursvergadering",
       type: "szpd",
     },
+
 
     {
       date: "2026-10-22",
@@ -72,11 +73,12 @@ export default function Events() {
       type: "szpd",
     },
   ];
-
+  // test
   // De datum wordt pas in de browser bepaald, zodat de lijst altijd klopt,
   // ook op een statische host zoals GitHub Pages.
   const [today, setToday] = useState<Date | null>(null);
 
+  
   useEffect(() => {
     const t = new Date();
     t.setHours(0, 0, 0, 0);
