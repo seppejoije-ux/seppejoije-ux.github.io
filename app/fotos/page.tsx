@@ -9,6 +9,8 @@ const EVENTS = [
       "/FotosEvent/Vergadering1/Foto2.jpeg",
       "/FotosEvent/Vergadering1/Foto3.jpeg",
       "/FotosEvent/Vergadering1/Foto4.jpeg",
+      "/FotosEvent/Vergadering1/Foto5.jpeg",
+
     ],
   },
 
