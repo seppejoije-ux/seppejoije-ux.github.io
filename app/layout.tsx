@@ -6,11 +6,6 @@ import Script from "next/script";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-
-
-
-
-
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,26 +33,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="nl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-
-<head>
-  <Script
-    src="https://cdn.cookie-script.com/s/8b7b1cb4868ac6e9520767b0800cd2a6.js"
-    strategy="beforeInteractive"
-  />
-</head>
-
-
       <body className="min-h-full flex flex-col bg-white text-black overflow-x-hidden">
+        <Script
+          src="https://cdn.cookie-script.com/s/8b7b1cb4868ac6e9520767b0800cd2a6.js"
+          strategy="beforeInteractive"
+        />
+
         <nav className="bg-white w-full py-3 lg:py-0 lg:h-35">
           <div className="h-full flex flex-col lg:flex-row justify-center items-center gap-3 lg:gap-12 px-4">
-            <Link
-               href="/">               
-                <img
-                  src="/FotosHome/logoSite.jpg"
-                  alt="Logo SZPD"
-                  className="h-16 sm:h-20 lg:h-30 w-auto cursor-pointer transition-transform duration-500 hover:rotate-12"
-                />
-              </Link>
+            <Link href="/">
+              <img
+                src="/FotosHome/logoSite.jpg"
+                alt="Logo SZPD"
+                className="h-16 sm:h-20 lg:h-30 w-auto cursor-pointer transition-transform duration-500 hover:rotate-12"
+              />
+            </Link>
 
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 sm:gap-x-8 lg:gap-12">
               <Link href="/" className={linkClass}>
@@ -89,27 +79,30 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         {children}
 
-
-                <footer className="w-full bg-blue-700 text-white mt-auto">
+        <footer className="w-full bg-blue-700 text-white mt-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-10 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>
-              © {new Date().getFullYear()} Stoel Zitten Pils Drinken
-            </p>
+            <p>© {new Date().getFullYear()} Stoel Zitten Pils Drinken</p>
 
             <div className="flex flex-wrap justify-center gap-6">
               <Link href="/" className="hover:text-yellow-300 transition">
                 Home
               </Link>
-              <Link href="/praesidium" className="hover:text-yellow-300 transition">
+              <Link
+                href="/praesidium"
+                className="hover:text-yellow-300 transition"
+              >
                 Praesidium
               </Link>
               <Link href="/events" className="hover:text-yellow-300 transition">
                 Events
               </Link>
               <Link href="/fotos" className="hover:text-yellow-300 transition">
-                Foto's
+                Foto&apos;s
               </Link>
-              <Link href="/partners" className="hover:text-yellow-300 transition">
+              <Link
+                href="/partners"
+                className="hover:text-yellow-300 transition"
+              >
                 Onze Partners
               </Link>
               <Link href="/contact" className="hover:text-yellow-300 transition">
@@ -118,12 +111,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </div>
           </div>
         </footer>
-        <GoogleAnalytics gaId="G-6KPGMWPNS7" />
 
+        <GoogleAnalytics gaId="G-6KPGMWPNS7" />
       </body>
     </html>
-
-
-
   );
 }
