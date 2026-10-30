@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const FOTOS = [
+  //"/LogosSponsors/Decoral.jpg",
+  //"/LogosSponsors/ClassicDesign.jpg",
+  //"/LogosSponsors/sloeber.jpg",
+
   "/FotosHome/bowlingnederland.jpg",
   "/FotosHome/biljartnederland1.jpg",
   "/FotosHome/pokernederland.jpg",

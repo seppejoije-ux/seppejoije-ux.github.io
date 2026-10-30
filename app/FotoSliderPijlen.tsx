@@ -6,13 +6,35 @@ type Props = {
   fotos: string[];
 };
 
+// ---- gedeelde timer voor ALLE sliders op de pagina ----
+const luisteraars = new Set<() => void>();
+let ticker: ReturnType<typeof setInterval> | null = null;
+
+function abonneer(fn: () => void) {
+  luisteraars.add(fn);
+  if (!ticker) {
+    ticker = setInterval(() => {
+      luisteraars.forEach((l) => l());
+    }, 3500);
+  }
+  return () => {
+    luisteraars.delete(fn);
+    if (luisteraars.size === 0 && ticker) {
+      clearInterval(ticker);
+      ticker = null;
+    }
+  };
+}
+// -------------------------------------------------------
+
 export default function FotoSliderPijlen({ fotos }: Props) {
   const [zichtbaar, setZichtbaar] = useState(3);
   const [index, setIndex] = useState(0);
   const [animeren, setAnimeren] = useState(true);
   const [gepauzeerd, setGepauzeerd] = useState(false);
-  const [klikTeller, setKlikTeller] = useState(0);
   const bezig = useRef(false);
+  const gepauzeerdRef = useRef(false);
+  const kanSchuivenRef = useRef(false);
 
   // is er genoeg om te schuiven? anders tonen we gewoon de foto's stil
   const kanSchuiven = fotos.length > zichtbaar;
@@ -24,6 +46,15 @@ export default function FotoSliderPijlen({ fotos }: Props) {
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
+
+  // refs bijhouden zodat de gedeelde timer altijd de laatste waarde ziet
+  useEffect(() => {
+    gepauzeerdRef.current = gepauzeerd;
+  }, [gepauzeerd]);
+
+  useEffect(() => {
+    kanSchuivenRef.current = kanSchuiven;
+  }, [kanSchuiven]);
 
   const volgende = useCallback(() => {
     if (bezig.current) return;
@@ -51,12 +82,13 @@ export default function FotoSliderPijlen({ fotos }: Props) {
     }
   };
 
-  // automatisch doorschuiven, tenzij gepauzeerd of te weinig foto's
+  // meedoen met de gedeelde timer: alleen schuiven als dit blok niet gepauzeerd is
   useEffect(() => {
-    if (gepauzeerd || !kanSchuiven) return;
-    const timer = setInterval(volgende, 3500);
-    return () => clearInterval(timer);
-  }, [gepauzeerd, kanSchuiven, klikTeller, volgende]);
+    return abonneer(() => {
+      if (gepauzeerdRef.current || !kanSchuivenRef.current) return;
+      volgende();
+    });
+  }, [volgende]);
 
   const naTransitie = () => {
     bezig.current = false;
@@ -64,16 +96,6 @@ export default function FotoSliderPijlen({ fotos }: Props) {
       setAnimeren(false);
       setIndex(0);
     }
-  };
-
-  const klikVolgende = () => {
-    setKlikTeller((t) => t + 1);
-    volgende();
-  };
-
-  const klikVorige = () => {
-    setKlikTeller((t) => t + 1);
-    vorige();
   };
 
   // te weinig foto's: gewoon netjes naast elkaar, zonder pijlen
@@ -89,7 +111,7 @@ export default function FotoSliderPijlen({ fotos }: Props) {
             <img
               src={src}
               alt={`Foto ${i + 1}`}
-              className="h-80 w-full rounded-lg object-cover"
+              className="aspect-[4/3] w-full rounded-lg object-cover"
             />
           </div>
         ))}
@@ -122,7 +144,7 @@ export default function FotoSliderPijlen({ fotos }: Props) {
               <img
                 src={src}
                 alt={`Foto ${(i % fotos.length) + 1}`}
-                className="h-80 w-full rounded-lg object-cover"
+                className="aspect-[4/3] w-full rounded-lg object-cover"
               />
             </div>
           ))}
@@ -132,7 +154,7 @@ export default function FotoSliderPijlen({ fotos }: Props) {
       <button
         type="button"
         aria-label="Vorige foto"
-        onClick={klikVorige}
+        onClick={vorige}
         onMouseEnter={() => setGepauzeerd(true)}
         onMouseLeave={() => setGepauzeerd(false)}
         className={`${pijlStijl} left-2`}
@@ -143,7 +165,7 @@ export default function FotoSliderPijlen({ fotos }: Props) {
       <button
         type="button"
         aria-label="Volgende foto"
-        onClick={klikVolgende}
+        onClick={volgende}
         onMouseEnter={() => setGepauzeerd(true)}
         onMouseLeave={() => setGepauzeerd(false)}
         className={`${pijlStijl} right-2`}

@@ -14,6 +14,8 @@ const EVENTS = [
     ],
   },
 
+
+
   // nieuw event? kopieer gewoon een blok hierboven en pas het aan
 ];
 
