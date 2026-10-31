@@ -4,6 +4,17 @@ import { useEffect, useState } from "react";
 
 export default function Events() {
   const events = [
+
+            {
+      date: "2026-11-26",
+      day: "6",
+      month: "NOV",
+      title: "SZPD Café",
+      location: "18:30 · STUVO Brugge",
+      description: "Kennismaking ",
+      type: "szpd",
+    },
+
         {
       date: "2026-10-29",
       day: "29",
