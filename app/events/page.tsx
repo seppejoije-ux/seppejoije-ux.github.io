@@ -7,7 +7,7 @@ export default function Events() {
 
             {
       date: "2026-11-26",
-      day: "6",
+      day: "26",
       month: "NOV",
       title: "SZPD Café",
       location: "18:30 · STUVO Brugge",
