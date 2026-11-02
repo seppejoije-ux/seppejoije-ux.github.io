@@ -5,7 +5,7 @@ const EVENTS = [
 
       {
     titel: "Halloween",
-    tekst: "something spooky happend",
+    tekst: "something spooky happened",
     fotos: [
       "/FotosEvent/Halloween2026/Foto1.jpeg",
       "/FotosEvent/Halloween2026/Foto5.jpeg",
@@ -18,7 +18,7 @@ const EVENTS = [
     ],
   },
 
-  
+
   {
     titel: "Vergadering",
     tekst: "administratief werk",
