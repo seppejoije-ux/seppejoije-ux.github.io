@@ -1,6 +1,24 @@
 import FotoSliderPijlen from "@/app/FotoSliderPijlen";
 
 const EVENTS = [
+
+
+      {
+    titel: "Halloween",
+    tekst: "something spooky happend",
+    fotos: [
+      "/FotosEvent/Halloween2026/Foto1.jpeg",
+      "/FotosEvent/Halloween2026/Foto5.jpeg",
+      "/FotosEvent/Halloween2026/Foto2.jpeg",
+      "/FotosEvent/Halloween2026/Foto3.jpeg",
+      "/FotosEvent/Halloween2026/Foto4.jpeg",
+      "/FotosEvent/Halloween2026/Foto5.jpeg",
+
+      
+    ],
+  },
+
+  
   {
     titel: "Vergadering",
     tekst: "administratief werk",
@@ -13,6 +31,8 @@ const EVENTS = [
       
     ],
   },
+
+
 
 
 
