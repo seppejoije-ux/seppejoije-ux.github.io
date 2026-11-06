@@ -2,6 +2,21 @@ import FotoSliderPijlen from "@/app/FotoSliderPijlen";
 
 const EVENTS = [
 
+  /*
+      {
+    titel: "voorbereiding SZPD CAFÉ",
+    tekst: "en een pijltje gooien",
+    fotos: [
+      "/FotosEvent/Vergadering2/Foto1.jpeg",
+      "/FotosEvent/Vergadering2/Foto5.jpeg",
+      "/FotosEvent/Vergadering2/Foto2.jpeg",
+      "/FotosEvent/Vergadering2/Foto3.jpeg",
+      "/FotosEvent/Vergadering2/Foto4.jpeg",
+      
+    ],
+  },  
+*/
+
 
       {
     titel: "Halloween",
@@ -31,6 +46,9 @@ const EVENTS = [
       
     ],
   },
+
+
+
 
 
 

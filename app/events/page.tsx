@@ -1,106 +1,90 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { events, eventSlug, type SzpdEvent } from "./eventsData";
+
+// Parse "YYYY-MM-DD" als lokale datum (voorkomt tijdzoneproblemen)
+const parseDate = (s: string): Date => {
+  const [y, m, d] = s.split("-").map(Number);
+  return new Date(y, m - 1, d);
+};
+
+function EventKaart({ event, past }: { event: SzpdEvent; past?: boolean }) {
+  const external = event.type === "external";
+  const klikbaar = Boolean(event.info);
+
+  const kaartKleur = past
+    ? "border-gray-400 opacity-70"
+    : external
+      ? "border-yellow-400 bg-yellow-50"
+      : "border-blue-700";
+
+  const datumKleur = past
+    ? "bg-gray-500 text-white"
+    : external
+      ? "bg-yellow-400 text-black"
+      : "bg-blue-700 text-white";
+
+  const inhoud = (
+    <>
+      <div
+        className={`shrink-0 text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4 ${datumKleur}`}
+      >
+        <p className="text-2xl sm:text-4xl font-bold">{event.day}</p>
+        <p className="text-base sm:text-xl uppercase">{event.month}</p>
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <div
+          className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
+            external ? "bg-yellow-400 text-black" : "bg-blue-700 text-white"
+          }`}
+        >
+          {external ? "Je vindt ons hier" : "SZPD evenement"}
+        </div>
+
+        <h3 className="text-xl sm:text-3xl font-bold">{event.title}</h3>
+
+        <p className="text-base sm:text-lg text-gray-600">{event.location}</p>
+
+        <p className="text-base sm:text-xl mt-2">{event.description}</p>
+
+        {klikbaar && (
+          <p className="text-base sm:text-lg font-semibold text-blue-700 mt-3">
+            Meer info →
+          </p>
+        )}
+      </div>
+    </>
+  );
+
+  const basis = `flex items-center gap-4 sm:gap-8 border-2 rounded-lg p-4 sm:p-6 ${kaartKleur}`;
+
+  if (klikbaar) {
+    return (
+      <Link
+        href={`/events/${eventSlug(event)}`}
+        className={`${basis} cursor-pointer transition hover:shadow-lg hover:scale-[1.01]`}
+      >
+        {inhoud}
+      </Link>
+    );
+  }
+
+  return <div className={basis}>{inhoud}</div>;
+}
 
 export default function Events() {
-  const events = [
-
-            {
-      date: "2026-11-26",
-      day: "26",
-      month: "NOV",
-      title: "SZPD Café",
-      location: "18:30 · STUVO Brugge",
-      description: "Kennismaking ",
-      type: "szpd",
-    },
-
-        {
-      date: "2026-10-29",
-      day: "29",
-      month: "OKT",
-      title: "Vergadering",
-      location: "20:00 · De Sloeber",
-      description: "bestuursvergadering",
-      type: "szpd",
-    },
-
-
-    {
-      date: "2026-10-22",
-      day: "22",
-      month: "OKT",
-      title: "LAN PARTY",
-      location: "18:00 · Stuvo Brugge",
-      description: (
-        <>
-          Georganiseerd door IEEE Brugge.
-          <br />
-          Verschillende SZPD-leden zullen aanwezig zijn.
-        </>
-      ),
-      type: "external",
-    },
-
-    {
-      date: "2026-11-07",
-      day: "7",
-      month: "NOV",
-      title: "Sint Maartensstoet",
-      location: "17:00 · Ardooie",
-      description: (
-        <>
-          stoet met praalwagens en vuurwerk
-          <br />
-          SZPD is present
-        </>
-      ),
-      type: "external",
-    },
-
-    {
-      date: "2026-11-20",
-      day: "20",
-      month: "NOV",
-      title: "QUIZ DVK EGEM",
-      location: "19:00 · De Magneet Pittem",
-      description: (
-        <>
-          Georganiseerd door Jeugd Dames VK Egem.
-          <br />
-          Eén team vertegenwoordigt SZPD
-        </>
-      ),
-      type: "external",
-    },
-
-    {
-      date: "2026-10-15",
-      day: "15",
-      month: "OKT",
-      title: "Vergadering",
-      location: "20:00 · De Sloeber",
-      description: "Aankomende activiteiten regelen",
-      type: "szpd",
-    },
-  ];
-  // test
   // De datum wordt pas in de browser bepaald, zodat de lijst altijd klopt,
   // ook op een statische host zoals GitHub Pages.
   const [today, setToday] = useState<Date | null>(null);
 
-  
   useEffect(() => {
     const t = new Date();
     t.setHours(0, 0, 0, 0);
     setToday(t);
   }, []);
-
-  // Parse "YYYY-MM-DD" als lokale datum (voorkomt tijdzoneproblemen)
-  const parseDate = (s: string): Date => {
-    const [y, m, d] = s.split("-").map(Number);
-    return new Date(y, m - 1, d);
-  };
 
   const upcomingEvents = today
     ? events
@@ -143,48 +127,8 @@ export default function Events() {
 
       {/* Aankomende evenementen */}
       <div className="flex flex-col gap-6 max-w-4xl mx-auto">
-        {upcomingEvents.map((event, index) => (
-          <div
-            key={index}
-            className={`flex items-center gap-4 sm:gap-8 border-2 rounded-lg p-4 sm:p-6 ${
-              event.type === "external"
-                ? "border-yellow-400 bg-yellow-50"
-                : "border-blue-700"
-            }`}
-          >
-            <div
-              className={`shrink-0 text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4 ${
-                event.type === "external"
-                  ? "bg-yellow-400 text-black"
-                  : "bg-blue-700 text-white"
-              }`}
-            >
-              <p className="text-2xl sm:text-4xl font-bold">{event.day}</p>
-              <p className="text-base sm:text-xl uppercase">{event.month}</p>
-            </div>
-
-            <div className="min-w-0 flex-1">
-              <div
-                className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
-                  event.type === "external"
-                    ? "bg-yellow-400 text-black"
-                    : "bg-blue-700 text-white"
-                }`}
-              >
-                {event.type === "external"
-                  ? "Je vindt ons hier"
-                  : "SZPD evenement"}
-              </div>
-
-              <h3 className="text-xl sm:text-3xl font-bold">{event.title}</h3>
-
-              <p className="text-base sm:text-lg text-gray-600">
-                {event.location}
-              </p>
-
-              <p className="text-base sm:text-xl mt-2">{event.description}</p>
-            </div>
-          </div>
+        {upcomingEvents.map((event) => (
+          <EventKaart key={eventSlug(event)} event={event} />
         ))}
       </div>
 
@@ -194,38 +138,8 @@ export default function Events() {
 
       {/* Afgelopen evenementen */}
       <div className="flex flex-col gap-4 sm:gap-8 max-w-4xl mx-auto">
-        {pastEvents.map((event, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-4 sm:gap-8 border-2 border-gray-400 opacity-70 rounded-lg p-4 sm:p-6"
-          >
-            <div className="shrink-0 bg-gray-500 text-white text-center rounded-lg px-3 py-2 sm:px-6 sm:py-4">
-              <p className="text-2xl sm:text-4xl font-bold">{event.day}</p>
-              <p className="text-base sm:text-xl uppercase">{event.month}</p>
-            </div>
-
-            <div className="min-w-0">
-              <div
-                className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${
-                  event.type === "external"
-                    ? "bg-yellow-400 text-black"
-                    : "bg-blue-700 text-white"
-                }`}
-              >
-                {event.type === "external"
-                  ? "Je vindt ons hier"
-                  : "SZPD evenement"}
-              </div>
-
-              <h3 className="text-xl sm:text-3xl font-bold">{event.title}</h3>
-
-              <p className="text-base sm:text-lg text-gray-600">
-                {event.location}
-              </p>
-
-              <p className="text-base sm:text-xl mt-2">{event.description}</p>
-            </div>
-          </div>
+        {pastEvents.map((event) => (
+          <EventKaart key={eventSlug(event)} event={event} past />
         ))}
       </div>
     </main>
