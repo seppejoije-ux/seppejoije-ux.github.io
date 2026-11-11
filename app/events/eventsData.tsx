@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import BetaalQR from "./BetaalQR";
 
 export type SzpdEvent = {
   date: string; // "YYYY-MM-DD"
@@ -14,7 +15,7 @@ export type SzpdEvent = {
 };
 
 export const events: SzpdEvent[] = [
-  {
+    {
     date: "2026-11-26",
     day: "26",
     month: "NOV",
@@ -22,17 +23,48 @@ export const events: SzpdEvent[] = [
     location: "18:30 · STUVO Brugge",
     description: "Kennismaking ",
     type: "szpd",
-    // Voorbeeld van een event mét extra info (klikbaar):
     info: (
       <>
         <p>
-          Kom kennismaken met SZPD tijdens ons eerste SZPD Café. Zin om 
-          gezellig iets te drinken, een potje biljart of een pijltje te gooien? Iedereen is welkom!!!
+          Tijdens het SZPD Café verkopen we drankjes aan studentvriendelijke
+          prijzen. Kom gezellig iets drinken en leer ons kennen!
         </p>
-        <p> </p>
+
+        <h2 className="text-2xl sm:text-3xl font-bold mt-4">
+          Schrijf op voorhand in
+        </h2>
+        <p>
+          Wie vooraf inschrijft, betaalt <strong>€7.5</strong> en krijgt daarvoor:
+        </p>
+        <ul className="list-disc pl-6">
+          <li>een drankkaart ter waarde van €7.5</li>
+          <li>je eerste drankje gratis</li>
+        </ul>
+
+        <h2 className="text-2xl sm:text-3xl font-bold mt-4">
+          Zo schrijf je in
+        </h2>
+        <ol className="list-decimal pl-6">
+          <li>Vul hieronder je naam in. Je krijgt dan je eigen QR-code.</li>
+          <li>Scan de QR-code met de app van je bank.</li>
+          <li>
+            Bevestig de overschrijving van €7.5. Je naam staat al in de
+            mededeling.
+          </li>
+          <li>
+            Kom op de avond zelf langs, toon je ID en krijg je
+            gratis drankje + drankkaart.
+          </li>
+        </ol>
+
+        <BetaalQR bedrag={7.5} 
+        mededelingVoor="SZPD café 26/11/2026"
+        logoSrc="/FotosHome/logoSite.jpg" />
       </>
     ),
-  },
+  },  
+
+
 
   {
     date: "2026-10-29",
