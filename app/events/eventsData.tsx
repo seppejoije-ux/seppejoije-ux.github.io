@@ -57,9 +57,17 @@ export const events: SzpdEvent[] = [
           </li>
         </ol>
 
-        <BetaalQR bedrag={7.5} 
-        mededelingVoor="SZPD café 26/11/2026"
-        logoSrc="/FotosHome/logoSite.jpg" />
+        <BetaalQR
+          bedrag={7.5}
+          mededelingVoor="SZPD café 26/11/2026"
+          //logoSrc="/FotosHome/logoSite.jpg"
+        />
+
+        <p className="mt-4">
+          Liever zelf overschrijven? Maak <strong>€7.5</strong> over naar
+          rekeningnummer <strong>BE82 7310 7994 7068</strong> met je naam en
+          eventueel email in de mededeling.
+        </p>
       </>
     ),
   },  
