@@ -60,12 +60,29 @@ export default function Home() {
         </div>
 
         <div className="flex-1 flex justify-center">
-          <img
-            src="/FotosHome/logoSite.jpg"
-            alt="Logo SZPD"
-            className="w-full max-w-xs sm:max-w-sm lg:max-w-none lg:w-auto lg:h-100"
-          />
+        <div className="flex flex-col gap-4 w-full max-w-xs sm:max-w-sm lg:w-fit lg:max-w-none">
+          <a
+            href="/FotosHome/flyer_szpd_cafe_2026.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open de flyer in een nieuw tabblad"
+            className="block"
+          >
+            <img
+              src="/FotosHome/flyer_szpd_cafe_2026.png"
+              alt="Flyer SZPD Café 26 november"
+              className="block w-full h-auto lg:w-auto lg:h-150 cursor-zoom-in"
+            />
+          </a>
+
+          <a
+            href="https://www.szpdroeselare.be/events/2026-11-26-szpd-cafe/"
+            className="block w-full rounded-md bg-blue-700 px-4 py-3 text-center text-sm sm:text-base font-bold uppercase tracking-wide text-yellow-300 hover:bg-blue-800 transition-colors"
+          >
+            Vooraf inschrijven = gratis drankje
+          </a>
         </div>
+      </div>
       </section>
 
 
