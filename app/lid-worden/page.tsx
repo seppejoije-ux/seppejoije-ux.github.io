@@ -17,7 +17,7 @@ export default function LidWorden() {
           </a>
 
           <a
-            href="/lid-worden/Regelement SZPD 26-27 - kopie.pdf"
+            href="/lid-worden/Regelement SZPD 26-27.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto rounded-full bg-yellow-300 px-8 py-4 text-lg sm:text-xl font-extrabold uppercase tracking-wider text-blue-700 shadow-lg ring-4 ring-blue-700 transition-all duration-200 hover:scale-105 hover:bg-yellow-200 hover:shadow-2xl active:scale-95"
