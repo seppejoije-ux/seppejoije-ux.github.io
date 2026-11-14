@@ -2,6 +2,8 @@ export default function Praesidium() {
   // Gsm: precies 2 per rij. Vanaf sm: vaste breedte per kaart.
   const card = "text-center w-[calc(50%-0.5rem)] sm:w-56 lg:w-64";
   const img = "w-full aspect-[4/5] object-cover rounded-lg";
+  const mail =
+    "block mt-2 sm:mt-3 text-base sm:text-lg text-blue-700 underline hover:text-blue-800";
 
   return (
     <main className="min-h-screen bg-white text-black px-4 sm:px-10 py-8 lg:py-12">
@@ -35,6 +37,9 @@ export default function Praesidium() {
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Secretaris</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Wobbe B.</p>
+          <a href="mailto:wobbe.baele@student.kuleuven.be" className={mail}>
+            Email
+          </a>
         </div>
 
         <div className={card}>
@@ -42,9 +47,10 @@ export default function Praesidium() {
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
+          <a href="mailto:lexie.depuydt@student.kuleuven.be" className={mail}>
+            Email
+          </a>
         </div>
-
-        
       </div>
     </main>
   );
