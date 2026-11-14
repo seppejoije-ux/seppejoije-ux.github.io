@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback } from "react";
 import FotoSlider from "./FotoSlider";
+import Link from "next/link";
 
 type Bier = {
   id: number;
@@ -94,6 +95,23 @@ export default function Home() {
           </span>
         ))}
       </div>
+
+          {/* Lid worden-knop bovenaan */}
+          <div className="w-full flex justify-center px-4 pt-6 sm:pt-8">
+            <Link
+              href="/lid-worden"
+              className="group relative inline-flex items-center gap-3 rounded-full bg-blue-700 px-8 py-4 text-lg sm:text-2xl font-extrabold uppercase tracking-wider text-yellow-300 shadow-lg ring-4 ring-yellow-300 transition-all duration-200 hover:scale-105 hover:bg-blue-800 hover:shadow-2xl active:scale-95"
+            >
+              Lid worden
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+
 
       {/* Stoelen + titel */}
       <div className="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap justify-center items-center gap-x-6 gap-y-6 sm:gap-x-10 lg:gap-x-20 px-4 sm:px-10 py-8 lg:py-12">
