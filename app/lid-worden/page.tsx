@@ -26,12 +26,6 @@ export default function LidWorden() {
           </a>
         </div>
 
-        <Link
-          href="/"
-          className="inline-block rounded-md bg-blue-700 px-6 py-3 font-bold uppercase text-yellow-300 hover:bg-blue-800 transition-colors"
-        >
-          ← Terug naar home
-        </Link>
       </div>
     </main>
   );

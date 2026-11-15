@@ -44,7 +44,7 @@ export default function Praesidium() {
 
         <div className={card}>
           <img src="/FotosPraesidium/Lexie.jpg" alt="Lexie D." className={img} />
-          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Socials</p>
+          <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Media</p>
           <p className="text-lg sm:text-2xl font-bold mt-2 sm:mt-4">Event</p>
           <p className="text-base sm:text-xl font-bold mt-2 sm:mt-4">Lexie D.</p>
           <a href="mailto:lexie.depuydt@student.kuleuven.be" className={mail}>
