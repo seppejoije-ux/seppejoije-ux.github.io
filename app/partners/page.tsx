@@ -8,6 +8,9 @@ type Partner = {
 const partners: Partner[] = [
  //  { naam: "Partner één", logo: "/LogosSponsors/Decoral.jpg" }, // logo zonder website
   { naam: "Partner twee", logo: "/LogosSponsors/ClassicDesign.jpg", website: "https://classic-design.be/" }, // logo met website
+
+  { naam: "Partner drie", logo: "/LogosSponsors/Stuvo.jpg", website: "https://www.vives.be/nl/studeren/stuvo" }, // logo met website
+
   // geen logo -> naam als tekst   { naam: "Partner drie", website: "https://www.voorbeeld.com" }, 
   // { naam: "Partner vier" },
 ];
