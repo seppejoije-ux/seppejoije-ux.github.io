@@ -38,11 +38,11 @@ const EVENTS = [
     titel: "Vergadering",
     tekst: "administratief werk",
     fotos: [
-      "/FotosEvent/Vergadering1/Foto1.jpeg",
-      "/FotosEvent/Vergadering1/Foto5.jpeg",
-      "/FotosEvent/Vergadering1/Foto2.jpeg",
-      "/FotosEvent/Vergadering1/Foto3.jpeg",
-      "/FotosEvent/Vergadering1/Foto4.jpeg",
+      "/FotosEvent/Vergadering1/Foto1.webp",
+      "/FotosEvent/Vergadering1/Foto5.webp",
+      "/FotosEvent/Vergadering1/Foto2.webp",
+      "/FotosEvent/Vergadering1/Foto3.webp",
+      "/FotosEvent/Vergadering1/Foto4.webp",
       
     ],
   },
