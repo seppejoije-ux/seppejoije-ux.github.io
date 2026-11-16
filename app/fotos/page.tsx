@@ -22,12 +22,12 @@ const EVENTS = [
     titel: "Halloween",
     tekst: "something spooky happened",
     fotos: [
-      "/FotosEvent/Halloween2026/Foto1.jpeg",
-      "/FotosEvent/Halloween2026/Foto5.jpeg",
-      "/FotosEvent/Halloween2026/Foto2.jpeg",
-      "/FotosEvent/Halloween2026/Foto3.jpeg",
-      "/FotosEvent/Halloween2026/Foto4.jpeg",
-      "/FotosEvent/Halloween2026/Foto5.jpeg",
+      "/FotosEvent/Halloween2026/Foto1.webp",
+      "/FotosEvent/Halloween2026/Foto5.webp",
+      "/FotosEvent/Halloween2026/Foto2.webp",
+      "/FotosEvent/Halloween2026/Foto3.webp",
+      "/FotosEvent/Halloween2026/Foto4.webp",
+      "/FotosEvent/Halloween2026/Foto5.webp",
 
       
     ],
