@@ -31,10 +31,10 @@ export const events: SzpdEvent[] = [
         </p>
 
         <h2 className="text-2xl sm:text-3xl font-bold mt-4">
-          Schrijf op voorhand in
+          Koop op voorhand een drankkaart
         </h2>
         <p>
-          Wie vooraf inschrijft, betaalt <strong>€7.5</strong> en krijgt daarvoor:
+          Wie vooraf een drankkaart koopt, betaalt <strong>€7.5</strong> en krijgt daarvoor:
         </p>
         <ul className="list-disc pl-6">
           <li>een drankkaart ter waarde van €7.5</li>
@@ -42,7 +42,7 @@ export const events: SzpdEvent[] = [
         </ul>
 
         <h2 className="text-2xl sm:text-3xl font-bold mt-4">
-          Zo schrijf je in
+          Zo doe je het 
         </h2>
         <ol className="list-decimal pl-6">
           <li>Vul hieronder je naam in. Je krijgt dan je eigen QR-code.</li>
