@@ -14,7 +14,7 @@ type Hoofdsponsor = Partner & {
 const hoofdsponsor: Hoofdsponsor = {
   naam: "De Sloeber",
   plaats: "Koolskamp",
-  logo: "/LogosSponsors/Sloeber.webp",
+  logo: "/LogosSponsors/sloeber.webp",
   website: "https://www.zaaldesloeber.be/",
   beschrijving:
     "Ons vaste stamcafé",
