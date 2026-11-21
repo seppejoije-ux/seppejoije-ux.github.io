@@ -4,34 +4,54 @@ type Partner = {
   website?: string; // optioneel: zonder website is het logo niet klikbaar
 };
 
+// De hoofdsponsor staat bovenaan en wordt groter getoond.
+const hoofdsponsor: Partner = {
+  naam: "Sponsor 1",
+  logo: "/LogosSponsors/Sloeber.webp",
+  website: "https://www.zaaldesloeber.be/",
+};
+
 // Voeg hier gewoon partners toe of verwijder ze.
 const partners: Partner[] = [
- //  { naam: "Partner één", logo: "/LogosSponsors/Decoral.jpg" }, // logo zonder website
-  { naam: "Partner twee", logo: "/LogosSponsors/ClassicDesign.webp", website: "https://classic-design.be/" }, // logo met website
-
-  { naam: "Partner drie", logo: "/LogosSponsors/Stuvo.webp", website: "https://www.vives.be/nl/studeren/stuvo" }, // logo met website
-
-  // geen logo -> naam als tekst   { naam: "Partner drie", website: "https://www.voorbeeld.com" }, 
-  // { naam: "Partner vier" },
+  // { naam: "Partner één", logo: "/LogosSponsors/Decoral.jpg" }, // logo zonder website
+  { naam: "Partner twee", logo: "/LogosSponsors/ClassicDesign.webp", website: "https://classic-design.be/" },
+  { naam: "Partner drie", logo: "/LogosSponsors/Stuvo.webp", website: "https://www.vives.be/nl/studeren/stuvo" },
+  // geen logo -> naam als tekst: { naam: "Partner vier", website: "https://www.voorbeeld.com" },
+  // { naam: "Partner vijf" },
 ];
 
-function PartnerKaart({ partner }: { partner: Partner }) {
+function PartnerKaart({
+  partner,
+  groot = false,
+}: {
+  partner: Partner;
+  groot?: boolean;
+}) {
   const inhoud = partner.logo ? (
     <img
       src={partner.logo}
       alt={partner.naam}
       loading="lazy"
-      className="h-40 sm:h-52 w-auto max-w-full object-contain"
+      className={
+        groot
+          ? "h-56 sm:h-80 w-auto max-w-full object-contain"
+          : "h-40 sm:h-52 w-auto max-w-full object-contain"
+      }
     />
   ) : (
-    <span className="text-center text-2xl font-semibold text-neutral-700">
+    <span
+      className={`text-center font-semibold text-neutral-700 ${
+        groot ? "text-4xl sm:text-5xl" : "text-2xl"
+      }`}
+    >
       {partner.naam}
     </span>
   );
 
-  // 1 per rij op gsm, 2 per rij op laptop. Alles staat mooi gecentreerd in zijn vak.
-  const basis =
-    "flex w-full sm:w-[calc(50%-1.5rem)] items-center justify-center transition";
+  // Hoofdsponsor: volle breedte. Anderen: 1 per rij op gsm, 2 per rij op laptop.
+  const basis = `flex items-center justify-center transition ${
+    groot ? "w-full" : "w-full sm:w-[calc(50%-1.5rem)]"
+  }`;
 
   if (partner.website) {
     return (
@@ -61,13 +81,26 @@ export default function Partners() {
         Bedankt voor jullie steun!
       </p>
 
-      <section
-        aria-label="Lijst van partners"
-        className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-12"
-      >
-        {partners.map((partner) => (
-          <PartnerKaart key={partner.naam} partner={partner} />
-        ))}
+      {/* Hoofdsponsor */}
+      <section aria-label="Hoofdsponsor" className="mt-12">
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-neutral-500">
+          Hoofdsponsor
+        </h2>
+        <div className="mt-8 flex justify-center">
+          <PartnerKaart partner={hoofdsponsor} groot />
+        </div>
+      </section>
+
+      {/* Overige partners */}
+      <section aria-label="Lijst van partners" className="mt-20">
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-neutral-500">
+          Partners
+        </h2>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-12">
+          {partners.map((partner) => (
+            <PartnerKaart key={partner.naam} partner={partner} />
+          ))}
+        </div>
       </section>
     </main>
   );
